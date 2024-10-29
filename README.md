@@ -1,6 +1,21 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Panaverse Website
 
-## Getting Started
+The Panaverse website connects learners and tech professionals, offering resources and courses in emerging technologies. With an intuitive interface, users can easily browse courses and access materials. Focused on practical learning and collaboration, Panaverse empowers individuals to excel in the fast-paced tech landscape.
+
+## Table of Contents
+- [Panaverse Website](#panaverse-website)
+  - [Table of Contents](#table-of-contents)
+  - [Features](#features)
+  - [Learn More](#learn-more)
+  - [Deploy on Vercel](#deploy-on-vercel)
+- [Panaverse](#panaverse)
+
+## Features
+- User-friendly interface for easy navigation.
+- Comprehensive course catalog covering various tech topics.
+- Access to learning resources and community forums.
+- Responsive design for both desktop and mobile users.
+
 
 First, run the development server:
 
