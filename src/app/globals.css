@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Lilita+One&family=Lobster&family=Oswald:wght@200..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Golos+Text:wght@400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oleo+Script:wght@400;700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -7,6 +8,120 @@ html, body {
   text-decoration-skip-ink: none;
 }
 
-.font-oswald {
-  font-family: 'Oswald', sans-serif;
+
+body{
+  font-family: "Golos Text", sans-serif;
+}
+.lato{
+    font-family: "Lato", sans-serif;
+}
+.inder{
+  font-family: "Trustindex Open Sans";
+}
+@keyframes flare {
+  0% {
+    background-position: -100%;
+  }
+  100% {
+    background-position: 200%;
+  }
+}
+
+.flare-text {
+  background: linear-gradient(90deg, transparent, #fff, transparent);
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: flare 2s linear infinite;
+}
+
+/* 8 */
+.btn-8 {
+  background-color: #f0ecfc;
+  background-image: linear-gradient(315deg, #0D2E59 0%, #0B1A3C 74%);
+  line-height: 42px;
+  padding: 0;
+  border: none;
+  
+  position: relative; /* Ensures pseudo-elements are positioned relative to the button */
+  display: inline-block; /* Ensures the button is inline and doesn't affect the whole page */
+  overflow: hidden; /* Prevents the pseudo-elements from overflowing outside the button */
+}
+
+.btn-8 span {
+  position: relative;
+  display: block;
+  z-index: 1; /* Ensures the text is always above the pseudo-elements */
+}
+
+.btn-8:before,
+.btn-8:after {
+  position: absolute;
+  content: "";
+  background: #c797eb;
+  transition: all 0.3s ease;
+  z-index: 0; /* Keeps pseudo-elements behind the text */
+}
+
+.btn-8:before {
+  height: 0%;
+  width: 2px;
+  right: 0;
+  bottom: 0;
+}
+
+.btn-8:after {
+  width: 0%;
+  height: 2px;
+  right: 0;
+  bottom: 0;
+}
+
+.btn-8:hover:before {
+  height: 100%;
+}
+
+.btn-8:hover:after {
+  width: 100%;
+}
+
+.btn-8:hover {
+  background: transparent;
+}
+
+.btn-8 span:hover {
+  color: #c797eb;
+}
+
+.btn-8 span:before,
+.btn-8 span:after {
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 0;
+  background: #c797eb;
+  transition: all 0.3s ease;
+}
+
+.btn-8 span:before {
+  width: 2px;
+  height: 0%;
+}
+
+.btn-8 span:after {
+  height: 2px;
+  width: 0%;
+}
+
+.btn-8 span:hover:before {
+  height: 100%;
+}
+
+.btn-8 span:hover:after {
+  width: 100%;
+}
+
+.oleo{
+  font-family: "Oleo Script", system-ui;
 }

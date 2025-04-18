@@ -1,0 +1,113 @@
+<div className="md:ml-10 w-full md:w-[60%] mt-6 md:mt-0">
+<h1 className="text-2xl md:text-3xl font-bold mb-4 text-center md:text-left">{product.title}</h1>
+<div className="md:mt-6 mt-4 mx-auto mb-4 flex justify-center md:justify-start">
+  <svg
+    className="w-16 h-6 md:w-22 md:h-7"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 120 30"
+    preserveAspectRatio="none"
+  >
+    <path
+      d="M0 15 C 10 -5, 30 35, 50 15 C 70 -5, 90 35, 110 15 C 130 -5, 150 35, 170 15"
+      fill="transparent"
+      stroke="blue"
+      strokeWidth="2"
+    >
+      <animateTransform
+        attributeName="transform"
+        type="translate"
+        values="0 0; 5 -2; -5 2; 0 0"
+        dur="2s"
+        repeatCount="indefinite"
+      />
+    </path>
+  </svg>
+</div>
+<p className="text-2xl md:text-3xl text-blue-950 font-semibold mb-4 text-center md:text-left">${product.price.toFixed(2)}</p>
+<p className="text-gray-800 mb-6 text-lg md:text-xl text-center md:text-left">{product.description}</p>
+
+<div className="text-center md:text-left">
+  <ul className="list-disc text-gray-800 font-medium text-lg pl-5 inline-block md:block">
+    <li>Call for availability</li>
+    <li>Delivery Toronto & GTA</li>
+  </ul>
+</div>
+
+<table className="w-full border border-gray-300 text-xs md:text-sm text-left mt-5">
+<thead className="bg-[#CCCCCC]">
+<tr>
+  <th className="border border-gray-800 p-1">Weight Capacity</th>
+  <th className="border border-gray-800 p-1">Maximum Speed</th>
+  <th className="border border-gray-800 p-1">Range</th>
+  <th className="border border-gray-800 p-1">Handle Bar</th>
+  <th className="border border-gray-800 p-1">Batteries</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td className="border border-gray-300 p-1">{product.specifications?.weightCapacity || "N/A"}</td>
+  <td className="border border-gray-300 p-1">{product.specifications?.maxSpeed || "N/A"}</td>
+  <td className="border border-gray-300 p-1">{product.specifications?.range || "N/A"}</td>
+  <td className="border border-gray-300 p-1">{product.specifications?.handleBar || "Delta Style"}</td>
+  <td className="border border-gray-300 p-1">{product.specifications?.batteries || "N/A"}</td>
+</tr>
+</tbody>
+</table>
+<tbody className="">
+{/* Wheel Configuration */}
+<tr>
+<th className="label  text-sm text-left mt-10 ">
+  <label htmlFor="wheel-configuration" className="mr-6 text-left text-sm"> {/* Added margin-right for spacing */}
+    Wheel Configuration
+  </label>
+</th>
+<td className="value">
+  <div className="relative">
+    <select
+      id="wheel-configuration"
+      name="attribute_wheel-configuration"
+      className="w-full p-2 border border-gray-300 rounded-full md:w-[65vh] px-5" // Make it fully rounded
+    >
+      <option value="">Choose an option</option>
+      <option value="3-Wheel">3-Wheel</option>
+      <option value="4-Wheel">4-Wheel</option>
+    </select>
+  </div>
+</td>
+</tr>
+
+{/* Color Selection */}
+<tr>
+<th className="label  text-sm text-left mt-10">
+  <label htmlFor="color" className="mr-5 text-left  text-sm"> {/* Added margin-right for spacing */}
+    Color
+  </label>
+</th>
+<td className="value">
+  <div className="relative">
+    <select
+      id="color"
+      name="attribute_color"
+      className="w-full p-2 border border-gray-300 rounded-full px-5" // Make it fully rounded
+    >
+      <option value="">Choose an option</option>
+      <option value="Red">Red</option>
+      <option value="Blue">Blue</option>
+    </select>
+  </div>
+</td>
+</tr>
+</tbody>
+
+
+
+
+<div className="mt-8 flex items-center justify-center space-x-4 md:space-x-14">
+  <a
+    href={`/`}
+    className="bg-green-600 text-white text-sm px-6 py-2 rounded-full hover:bg-green-800 transition-all duration-300"
+  >
+    Add to Cart
+  </a>
+</div>
+</div>
