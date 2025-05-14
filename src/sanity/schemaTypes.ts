@@ -6,6 +6,14 @@ export const product = defineType({
   type: 'document',
   fields: [
     defineField({ name: 'title', title: 'Title', type: 'string' }),
+    defineField({
+      name: 'introDescription',
+      title: 'Intro Description',
+      type: 'text',
+      initialValue:
+        'Delta™ Ultra-Light 1000, Full-Electric Hospital Bed by Drive Medical\n\nIncludes: Bed Frame Only\nPlease select the following below:\n• Mattress\n• Choice of Full or Half Rails\n• Accessories',
+    }),
+    
     defineField({ name: 'description', title: 'Product Description', type: 'text' }), 
     defineField({ name: 'whyWeLikeIt', title: 'Why We Like It', type: 'text' }), 
     defineField({ name: 'productDetailsDescription', title: 'Product Details Description', type: 'text' }),
@@ -42,77 +50,14 @@ export const product = defineType({
         }),
       ],
     }),
-    defineField({
-      name: 'specifications',
-      title: 'Specifications',
-      type: 'object',
-      fields: [
-        { name: 'weightCapacity', title: 'Weight Capacity', type: 'string' }, // 325 lbs
-        { name: 'maxSpeed', title: 'Maximum Speed', type: 'string' }, // 4.7 mph
-        { name: 'range', title: 'Per Charge Range (Max)', type: 'string' }, // 15.9 miles
-        { name: 'climbingAngle', title: 'Climbing Angle', type: 'string' }, // n/a
-        { name: 'groundClearance', title: 'Ground Clearance', type: 'string' }, // 0.75″ at anti-tip
-        { name: 'turningRadius', title: 'Turning Radius', type: 'string' }, // 36″
-        { name: 'frontWheelSize', title: 'Front Tire', type: 'string' }, // 3″ x 8″ solid
-        { name: 'rearWheelSize', title: 'Rear Tires', type: 'string' }, // 3″ x 9″ solid
-        { name: 'overallWidth', title: 'Width', type: 'string' }, // 21.25″
-        { name: 'overallLength', title: 'Length', type: 'string' }, // 42″
-        { name: 'seatWidth', title: 'Seating Width', type: 'string' }, // 17″
-        { name: 'seatDepth', title: 'Seating Depth', type: 'string' }, // 17″
-        { name: 'lowestSeatToGroundHeight', title: 'Seat-to-Ground Height (Min)', type: 'string' }, // 20.5″
-        { name: 'maxSeatToGroundHeight', title: 'Seat-to-Ground Height (Max)', type: 'string' }, // 22″
-        { name: 'maxSeatToDeckHeight', title: 'Seat-to-Deck Height (Max)', type: 'string' }, // 18″
-        { name: 'weightWithoutBatteries', title: 'Total Weight Without Batteries', type: 'string' }, // 93 lbs.
-        { name: 'heaviestPiece', title: 'Heaviest Piece', type: 'string' }, // 35 lbs.
-        { name: 'seatSectionWeight', title: 'Seat Weight', type: 'string' }, // 16.5 lbs
-        { name: 'batteryPackWeight', title: 'Battery Weight (each)', type: 'string' }, // 14 lbs. each
-        { name: 'batteries', title: 'Battery Requirements', type: 'string' }, // 2 x 18AH
-        { name: 'charger', title: 'Battery Charger', type: 'string' }, // 2A Offboard
-        { name: 'suspension', title: 'Suspension', type: 'boolean' }, // No
-        
-    
-        // Retaining your existing fields as well
-        { name: 'scooterDisassembles', title: 'Scooter Disassembles', type: 'boolean' },
-        { name: 'scooterDriveRange', title: 'Scooter Drive Range', type: 'string' },
-        { name: 'deltaTiller', title: 'Delta Tiller', type: 'boolean' },
-        { name: 'quickShip', title: 'Quick-Ship', type: 'boolean' },
-        { name: 'adjustableTiller', title: 'Adjustable Tiller', type: 'boolean' },
-        { name: 'multipleSeatingOptions', title: 'Multiple Seating Options', type: 'boolean' },
-        { name: 'heightAdjustableSeat', title: 'Height Adjustable Seat', type: 'boolean' },
-        { name: 'highBackSeat', title: 'High-Back Seat', type: 'boolean' },
-        { name: 'flipBackArmrests', title: 'Flip-Back Armrests', type: 'boolean' },
-        { name: 'widthAdjustable', title: 'Width Adjustable', type: 'boolean' },
-        { name: 'wheelType', title: 'Wheel Type', type: 'string' },
-        { name: 'airFilledTires', title: 'Air-Filled (Pneumatic) Tires', type: 'boolean' },
-        { name: 'transportableCollapsible', title: 'Transportable/Collapsible', type: 'boolean' },
-        { name: 'foldable', title: 'Foldable', type: 'boolean' },
-        { name: 'batteryType', title: 'Battery Type', type: 'string' },
-        { name: 'batteriesIncluded', title: 'Batteries Included', type: 'boolean' },
-        { name: 'largerBatteryOption', title: 'Larger Battery Option', type: 'boolean' },
-        { name: 'driveType', title: 'Drive Type', type: 'string' },
-        { name: 'oneHandOperation', title: 'One-Hand Operation', type: 'boolean' },
-        { name: 'brakingSystem', title: 'Braking System', type: 'string' },
-        { name: 'basketIncluded', title: 'Basket Included', type: 'boolean' },
-        { name: 'headlight', title: 'Headlight', type: 'boolean' },
-        { name: 'extendedBase', title: 'Extended Base', type: 'boolean' },
-        { name: 'baseAndTillerWeight', title: 'Base and Tiller Weight', type: 'string' },
-        { name: 'chargingPortLocation', title: 'Charging Port Location', type: 'string' },
-        
-      ],
-    }),
-    
+
     defineField({
       name: 'productDetails',
       title: 'Product Details',
       type: 'array',
       of: [{ type: 'block' }],
     }),
-    defineField({
-      name: 'armrestOptions',
-      title: 'Armrest Options',
-      type: 'array', 
-      of: [{ type: 'string' }],
-    }),
+   
     defineField({
       name: 'sectionImages',
       title: 'Section Images',
@@ -126,20 +71,42 @@ export const product = defineType({
       // You can specify a limit for the array to only allow 2 images
       validation: (Rule) => Rule.length(2).error('Please upload exactly two images.'),
     }),
-    defineField({
-      name: 'scooterSpecifications',
-      title: 'Scooter Specifications',
-      type: 'document',
-      fields: [
-        {
-          name: 'description',
-          title: 'Specifications Description',
-          type: 'array',
-          of: [{ type: 'block' }],
-        },
-      ],
-    }
-    
-    
-),],
+
+
+
+
+defineField({
+  name: 'featuresList',
+  title: 'Product Features',
+  type: 'array',
+  of: [{ type: 'string' }],
+  initialValue: [
+    'The Delta 1000 is truly universal because the bed frame can be used with Drive’s and most other manufacturers’ bed ends, old and new',
+    'The transition box mounted on the foot section is key to interchangeability',
+    'The transition box allows you to change the rotation of the high/low shaft',
+    'Headboard is taller than footboard to better fit home decor',
+    'The wood grain panels are break and scratch resistant',
+    'Foot section weighs 50% less than conventional foot sections to make deliveries safe and easy',
+    'Once installed, the high/low shaft will stay with the bed to eliminate loss or forgetting on future installations',
+    'Labels and color-coded springs assure accurate installation of side rails for patient safety',
+    'Unique motor is completely self-contained to reduce weight and noise',
+    'The motor assembly can be installed and removed with patient in bed',
+    'Bed, side rails and mattress safety-tested by SGS, a nationally recognized testing facility. Satisfies all applicable FDA entrapment guidelines',
+    'The motor is UL approved',
+    'In the event of a power failure, a 9 volt battery in the hand control can lower the head and foot sections nine times — no crank needed',
+    'New and improved hand pendant has large, easy-to-use controls',
+    'Bed ships in two cartons',
+    'Channel frame construction provides superior strength and reduced weight',
+    'Zinc-coated spring deck',
+    'Weight Capacity 450 lbs',
+  ],
+}),
+
+defineField({ name: 'brand', title: 'Brand', type: 'string', initialValue: 'Drive DeVilbiss Healthcare' }),
+defineField({ name: 'sku', title: 'SKU', type: 'string', initialValue: '700-850' }),
+defineField({ name: 'originalPrice', title: 'Original Price', type: 'number', initialValue: 425 }),
+
+
+],
+
 });

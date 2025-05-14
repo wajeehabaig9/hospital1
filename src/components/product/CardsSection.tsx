@@ -31,31 +31,7 @@ const CardsSection = () => {
 
   return (
     <div className="flex flex-col md:flex-row justify-between mt-10 px-4 md:px-10">
-      {/* Image Card */}
-      <div className=" md:flex hidden w-full md:w-[50vh] mx-auto flex-1  flex flex-col items-center p-6 rounded-lg">
-        <img
-          src="https://mednation.ca/wp-content/uploads/2023/04/gra-600x600.jpg"
-          className="w-[40%] sm:w-[35vh] h-[30vh] object-cover rounded-lg transition-all duration-500 ease-in-out hover:scale-105"
-          alt="Scooter"
-        />
 
-        {/* Finance Section */}
-        <div
-          className="shadow-2xl bg-[#F2F2F2] flex flex-col items-center justify-center rounded-xl px-4 py-6 
-          transition-all duration-500 ease-in-out hover:shadow-3xl hover:scale-105 mt-6 md:mt-8"
-        >
-          <Image
-            decoding="async"
-            className="p-1 w-[12vh] h-[12vh] md:w-[20vh] md:h-[20vh] transition-transform duration-500 ease-in-out hover:scale-110"
-            src={finance}
-            alt="Financing Icon"
-          />
-
-          <h2 className="text-lg sm:text-xl md:text-2xl font-medium transition-colors duration-500 ease-in-out hover:text-gray-700 text-center mt-4">
-            FINANCING OPTIONS AVAILABLE
-          </h2>
-        </div>
-      </div>
 
       {/* Heading Section */}
       <div className="w-full bg-[#FAFAFA] md:w-[130vh] text-center">

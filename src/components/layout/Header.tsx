@@ -36,11 +36,13 @@ const Header = () => {
   ];
   const menuItems = [
     { key: "home", label: "Home", path: "/" },
-    { key: "about", label: "About", path: "/about" },
-    { key: "reports", label: "Products", path: "/reports" },
-    { key: "resources", label: "Rental Booking", path: "/resourcesmain" },
-    { key: "gallery", label: "Rental", path: "/Gallery" },
-    { key: "communities", label: "Contact Us", path: "/communities" },
+    { key: "about", label: "Bed", path: "/product/product1" },
+    { key: "reports", label: "Wheelchairs", path: "/reports" },
+    { key: "resources", label: "Bathroom Safety", path: "/resourcesmain" },
+    { key: "gallery", label: "Rentals", path: "/Gallery" },
+    { key: "communities", label: "More Products", path: "/communities" },
+    { key: "communities", label: "Patient Lifts", path: "/communities" },
+
   ];
 
   return (
@@ -58,7 +60,7 @@ const Header = () => {
             <ul className="flex space-x-6 items-center">
               {menuItems.map((item, index) => (
                 <li key={item.key} className="border-b-2 border-transparent xl:text-[16px] md:text-[8px]  lg:text-[10px] hover:border-[#0D2659] transition duration-300">
-                  {index === 2 ? ( // Dropdown for Reports
+                  {index === 5 ? ( // Dropdown for Reports
                     <div
                       className="relative"
                       onMouseEnter={() => setDropdownOpen(true)}
@@ -72,8 +74,8 @@ const Header = () => {
                         <FaChevronDown className={`ml-2 text-[13px] transition-transform ${dropdownOpen ? 'rotate-180' : ''}`} />
                       </span>
                       {dropdownOpen && (
-                        <div className="absolute top-full left-0 right-0  mx-auto md:w-[120vh] bg-white shadow-lg border border-gray-300 z-50 font-lato">
-                          <div className="mx-auto w-full  p-5 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-20">
+                        <div className="absolute top-full left-0 right-0  mx-auto w-full bg-white shadow-lg border border-gray-300 z-50 font-lato">
+                          <div className="mx-auto w-full  p-5  gap-20">
 
                             {/* Column 1 */}
                             <div>
@@ -88,30 +90,7 @@ const Header = () => {
                               </ul>
                             </div>
 
-                            {/* Column 2 */}
-                            <div>
-                              <h3 className="text-black text-[18px] font-bold lato border-blue-500 border-b h-8 mb-1">Homecare</h3>
-                              <ul className="space-y-2 mt-2">
-                                <li><a href="https://mednation.ca/electrical-home-hospital-beds/" className="text-gray-700 hover:text-[#0D265A] cursor-pointer text-[16px] lato">Electrical Home Hospital Beds</a></li>
-                                <li><a href="https://mednation.ca/mattresses/" className="text-gray-700 hover:text-[#0D265A] cursor-pointer text-[16px] lato">Mattresses</a></li>
-                                <li><a href="https://mednation.ca/lift-chairs/" className="text-gray-700 hover:text-[#0D265A] cursor-pointer text-[16px] lato">Lift Chairs</a></li>
-                                <li><a href="https://mednation.ca/patient-lifts-and-slings/" className="text-gray-700 hover:text-[#0D265A] cursor-pointer text-[16px] lato">Patient Lifts and Slings</a></li>
-                                <li><a href="https://mednation.ca/bed-accessories/" className="text-gray-700 hover:text-[#0D265A] cursor-pointer text-[16px] lato">Bed Accessories</a></li>
-                              </ul>
-                            </div>
-
-                            {/* Column 3 */}
-                            <div>
-                              <h3 className="text-black text-[18px] font-bold lato border-blue-500 border-b h-8 mb-1">Bathroom Safety</h3>
-                              <ul className="space-y-2 mt-2">
-                                <li><a href="https://mednation.ca/shower-chairs/" className="text-gray-700 hover:text-[#0D265A] cursor-pointer text-[16px] lato">Shower Chairs</a></li>
-                                <li><a href="https://mednation.ca/commodes/" className="text-gray-700 hover:text-[#0D265A] cursor-pointer text-[16px] lato">Commodes</a></li>
-                                <li><a href="https://mednation.ca/transfer-benches/" className="text-gray-700 hover:text-[#0D265A] cursor-pointer text-[16px] lato">Transfer Benches</a></li>
-                                <li><a href="https://mednation.ca/toilet-frames-and-raised-toilet-seats/" className="text-gray-700 hover:text-[#0D265A] cursor-pointer text-[16px] lato">Toilet Frames and Raised Toilet Seats</a></li>
-                                <li><a href="https://mednation.ca/tub-and-grab-bars/" className="text-gray-700 hover:text-[#0D265A] cursor-pointer text-[16px] lato">Tub and Grab Bars</a></li>
-                                <li><a href="https://mednation.ca/handheld-shower-sprays-and-bath-mats/" className="text-gray-700 hover:text-[#0D265A] cursor-pointer text-[16px] lato">Handheld Shower Sprays and Bath Mats</a></li>
-                              </ul>
-                            </div>
+                      
 
                             {/* You can add Column 4 if needed */}
 
@@ -162,13 +141,7 @@ const Header = () => {
 
         </div>
         <div className="hidden md:flex items-center space-x-3">
-  <div className="flex items-center space-x-2 border-r pr-4 lg:flex xl:flex md:hidden">
-    <FaPhoneAlt className="text-[#1E2A46] xl:text-[24px] lg:text-[20px] md:text-[14px]" />
-    <div className="text-sm text-[#1E2A46]">
-      <div className="font-medium xl:text-[14px] lg:text-[10px] md:text-[8px]">Emergency Line</div>
-      <div className="xl:text-[12px]  lg:text-[6px] md:text-[8px]">+16475144609</div>
-    </div>
-  </div>
+
 
   <div className="flex items-center space-x-6 text-gray-600">
     <FaSearch className="xl:text-[18px] lg:text-[16px] md:text-[12px]" />

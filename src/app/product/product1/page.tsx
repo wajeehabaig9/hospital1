@@ -9,7 +9,7 @@ import Link from 'next/link';
 import { motion } from "framer-motion";
 
 interface Product {
-  id: string; 
+  id: string;
   _id: string;
   title: string;
   description: string;
@@ -101,173 +101,127 @@ const Product1Page: React.FC = () => {
   return (
     <div>
       {/* Hero Section */}
-      <div className="relative bg-cover bg-left-top h-[30vh] md:h-[55vh]"
-        style={{
-          backgroundImage: "linear-gradient(to right, rgba(12, 40, 90, 1) 50%, rgba(12, 41, 90, 0.1) 100%, rgba(115, 192, 47, 0)), url('https://res.cloudinary.com/dzngpgki4/image/upload/v1743198628/Screenshot_2025-03-29_at_2.50.42_AM_hteuv7.png')",
-          backgroundSize: "auto 130%",
-          backgroundPosition: "right center",
-          backgroundRepeat: "no-repeat",
-        }}>
-        <div className="max-w-screen-xl mx-auto md:px-4 flex flex-wrap items-stretch">
-          <div className="w-full md:w-2/3 px-12 py-3">
-            <h1 className="text-4xl sm:text-4xl md:text-5xl text-white font-semibold  mt-10 md:mt-28">Mobility Scooters</h1>
-            <h2 className="text-lg sm:text-lg md:text-xl text-white mt-2">We offer Mobility scooters for Sale and Rental.</h2>
-          </div>
-        </div>
-      </div>
 
-      {/* Product Cards Section */}
-      <CardsSection />
- 
+      <div className="flex space-x-2 justify-end md:px-20 md:mt-10 items-center">
+        <div className="text-[14px] font-normal p-1 text-white bg-[#48A2D5]    w-[40px] h-[40px] text-center">1</div>
+        <div className="text-[14px] font-normal p-1 border-gray-300 border-[1px] w-[40px] h-[40px] text-center">2</div>
+        <div className="text-[14px] font-normal p-1 border-gray-300 border-[1px] w-[40px] h-[40px] text-center">3</div>
+        <div className="text-[14px] font-normal p-1 border-gray-300 border-[1px] w-[40px] h-[40px] text-center">4</div>
+        <div className="text-[14px] font-normal p-1 border-gray-300 border-[1px] w-[40px] h-[40px] text-center">5</div>
+
+        <div className="flex space-x-2">
+
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-5 w-5 text-gray-500"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            strokeWidth={2}
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+          </svg>
+        </div>
+
+      </div>
       {/* Product Details Section */}
-      <div className="md:px-20 md:mt-40">
-      <div className="w-full  flex items-center my-6 sm:my-8 ">
-          <div className="border-t border-gray-400 flex-1"></div>
-          <span className="px-4 text-blue-900 font-semibold text-3xl whitespace-nowrap">
-
-          All Mobility Scooters Products
-
-          </span>
-          <div className="border-t border-gray-400 flex-1"></div>
-        </div>
-        {products.map((product, index) => (
-  <div key={index} className="group">
-    <div className="bg-white p-6 rounded-lg flex flex-col md:flex-row justify-between space-y-6 md:space-y-0 transition-all duration-300 hover:scale-105">
-      {/* Product Image Container */}
-      <div className="relative h-[40vh] w-full md:w-[40vh] flex justify-center items-center group">
-        <Image 
-          src={typeof product.image === 'string' ? product.image : product.image?.asset.url || 'https://via.placeholder.com/300'} 
-          alt={product.title} 
-          className="object-cover rounded-lg" 
-          width={300} 
-          height={300} 
-        />
-        
-        {/* Blue Hover Animation */}
-        <div className="absolute inset-0 bg-gradient-to-t from-blue-800 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 ease-in-out"></div>
-
-       {/* Add to Cart / Details Button */}
-<div className="absolute top-28 left-1/2 transform -translate-x-1/2 text-white font-semibold py-2 px-4 rounded-md opacity-0 group-hover:opacity-100 transition-all duration-500 ease-in-out w-full flex justify-center text-center">
-  <strong className="p-1 border border-white text-[14px]">ADD TO CART</strong> &nbsp;/ DETAILS
-</div>
-
-      </div>
-
-      {/* Product Details */}
-      <div className="w-full md:w-[140vh] px-4">
-        <h3 className="text-2xl font-medium italic text-black mb-4">
-          <a href="/" className="hover:underline">{product.title}</a>
-        </h3>
-        <p className="text-gray-500 mb-4 font-medium ">{product.description}</p>
-
-        <div className="flex flex-col sm:flex-row justify-between w-full sm:w-[100vh] px-5">
-          <h1 className="flex items-center gap-2 text-green-600 font-normal text-sm mb-5">
-            <Check className="w-5 h-5 text-green-600" /> Call for availability
-          </h1>
-          <h1 className="flex items-center gap-2 text-green-600 font-normal text-sm">
-            <Check className="w-5 h-5 text-green-600" /> Delivery Toronto & GTA
-          </h1>
-        </div>
-
-        {/* Product Specifications Table */}
-        <table className="w-full border border-gray-300 rounded-lg text-sm text-left md:mt-0 mt-4">
-          <thead className="bg-[#CCCCCC] rounded-lg" >
-            <tr>
-              <th className="border border-gray-800 p-1 md:text-[14px] text-[10px] text-center">Weight Capacity</th>
-              <th className="border border-gray-800 p-1 md:text-[14px] text-[10px] text-center">Maximum Speed</th>
-              <th className="border border-gray-800 p-1 md:text-[14px] text-[10px] text-center">Range (Distance)</th>
-              <th className="border border-gray-800 p-1 md:text-[14px] text-[10px] text-center">
-                {index === 0 ? "Turning Radius" : "Handle Bar"}
-              </th>
-              <th className="border border-gray-800 p-1 md:text-[14px] text-[10px] text-center">Batteries</th>
-              <th className="border border-gray-800 p-1 md:text-[14px] text-[10px] text-center">Charger</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr> 
-              <td className="border border-gray-300 p-1 md:text-[14px] text-[10px] text-center">{product.specifications?.weightCapacity || "N/A"}</td>
-              <td className="border border-gray-300 p-1 md:text-[14px] text-[10px] text-center">{product.specifications?.maxSpeed || "N/A"}</td>
-              <td className="border border-gray-300 p-1 md:text-[14px] text-[10px] text-center">{product.specifications?.range || "N/A"}</td>
-              <td className="border border-gray-300 p-1 md:text-[14px] text-[10px] text-center">{product.specifications?.turningRadius || product.specifications?.handleBar || "Delta Style"}</td>
-              <td className="border border-gray-300 p-1 md:text-[14px] text-[10px] text-center">{product.specifications?.batteries || "N/A"}</td>
-              <td className="border border-gray-300 p-1 md:text-[14px] text-[10px] text-center">{product.specifications?.charger || "N/A"}</td>
-            </tr>
-          </tbody>
-        </table>
-
-        {/* Product Price and View Button */}
-        <div className="mt-4 flex items-center justify-end space-x-14">
-          <span className="text-xl font-medium text-blue-900">
-            ${product?.price ? product.price.toFixed(2) : "0.00"}
-          </span>
-          <Link 
-  href={`/product/product1/detail${index + 1}?id=${product._id}`} 
-  className="bg-green-600 text-white px-4 py-2 rounded-full hover:bg-green-800 transition-all duration-300"
->
-  View Product
-</Link>
-
-
-
-        </div>
-      </div>
-    </div>
-
-    {/* Financing Section */}
-    <div className="flex items-center justify-start space-x-1 mt-14 md:pl-0 pl-10">
-      <h1 className="text-lg"> 
-        Starting at ${((product?.price || 88) / 12).toFixed(2)}/mo with 
-      </h1>
-
-      <Image
-        src={Affirm}
-        alt="Financing options"
-        width={50}
-        height={50}
-        className="-mt-1"
-      />
-      <h1 className="text-lg">Learn more</h1>
-    </div>
-
-    <div className="h-[1px] w-full bg-gray-200 mb-5 mt-5"></div>
+      <div className="md:px-20 md:mt-20">
+  <div className="w-full flex items-center my-6 sm:my-8">
+    <div className="border-t border-gray-400 flex-1"></div>
+    <span className="px-4 text-blue-900 font-semibold text-3xl whitespace-nowrap">
+      All Mobility Scooters Products
+    </span>
+    <div className="border-t border-gray-400 flex-1"></div>
   </div>
-))}
+  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+  {products.map((product, index) => (
+    <div key={index} className="relative">
+      <Link href={`/product/product1/detail${index + 1}?id=${product._id}`}>
+        <div className="bg-white border border-gray-200 rounded-md shadow-md hover:shadow-lg transition-all duration-300 p-4 flex flex-col h-full relative">
 
+          {/* Heart Icon */}
+
+
+          {/* Product Image */}
+          <div className="relative w-full h-44 flex items-center justify-center bg-white group overflow-hidden">
+  <Image
+    src={
+      typeof product.image === "string"
+        ? product.image
+        : product.image?.asset.url || "https://via.placeholder.com/300"
+    }
+    alt={product.title}
+    width={160}
+    height={160}
+    className="object-contain z-10 transition-transform duration-300 group-hover:scale-105"
+  />
+  {/* Black Hover Overlay */}
+  <div className="absolute inset-0 bg-black bg-opacity-30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20" />
 </div>
 
 
-<div className="flex space-x-2 justify-end md:px-20 items-center">
-  <div className="text-[10px] font-normal p-1 text-white bg-[#48A2D5] w-[25px] h-[25px] text-center">1</div>
-  <div className="text-[10px] font-normal p-1 border-gray-300 border-[1px] w-[25px] h-[25px] text-center">2</div>
- <div className="flex space-x-2"> 
-  <h1>Next</h1>
-<svg
-  xmlns="http://www.w3.org/2000/svg"
-  className="h-5 w-5 text-gray-500"
-  fill="none"
-  viewBox="0 0 24 24"
-  stroke="currentColor"
-  strokeWidth={2}
->
-  <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-</svg>
- </div>
+          {/* Product Title */}
+          <h2 className="text-[18px] font-medium mt-4 line-clamp-2">{product.title}</h2>
+          <div className="absolute bottom-3 right-3 text-gray-400 hover:text-red-500 cursor-pointer">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={1}
+              stroke="currentColor"
+              className="w-8 h-8"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M21 8.25c0-2.485-2.014-4.5-4.5-4.5a4.504 4.504 0 00-3.75 2.018A4.504 4.504 0 009 3.75c-2.486 0-4.5 2.015-4.5 4.5 0 6 9 10.5 9 10.5s9-4.5 9-10.5z"
+              />
+            </svg>
+          </div>
+          {/* Star Rating */}
+          <div className="flex items-center -space-x-[4px] mt-2">
+            {[...Array(5)].map((_, i) => (
+              <svg
+                key={i}
+                className="w-5 h-5 text-gray-400 fill-current"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+              >
+                <path d="M9.049 2.927a1 1 0 011.902 0l1.1 3.385a1 1 0 00.95.69h3.564c.969 0 1.371 1.24.588 1.81l-2.885 2.095a1 1 0 00-.364 1.118l1.1 3.386c.3.921-.755 1.688-1.54 1.118L10 13.347l-2.885 2.095c-.785.57-1.84-.197-1.54-1.118l1.1-3.386a1 1 0 00-.364-1.118L3.426 8.812c-.783-.57-.38-1.81.588-1.81h3.564a1 1 0 00.95-.69l1.1-3.385z" />
+              </svg>
+            ))}
+          </div>
 
-</div>
-<div className="w-full px-4 md:px-20  py-8 flex flex-col items-center text-center bg-white shadow-md rounded-lg md:mt-10 mt-1">
-      <h2 className="text-2xl md:text-3xl font-semibold mb-2">
-        Looking for a Scooter Temporarily?
-      </h2>
-      <p className="text-lg font-medium text-gray-600 mb-6">
-        We offer short-term and long-term rentals at an affordable price.
-      </p>
-      <Link   className="bg-blue-950 text-white text-md font-medium mt-5 px-6 py-3 rounded-md hover:bg-blue-900 transition-all" href="https://mednation.ca/mobility-scooter-rentals/">
-          See Our Rentals
+          {/* Price */}
+          <p className="text-blue-900 font-bold mt-2 text-[20px]">
+            ${product?.price ? product.price.toFixed(2) : "0.00"}
+          </p>
+        </div>
       </Link>
     </div>
+  ))}
+</div>
 
 
-    <div className="w-full  mx-auto mt-10 max-w-5xl bg-gray-100 p-6 rounded-md shadow-md border border-gray-300 mb-10">
+</div>
+
+
+
+
+      <div className="w-full px-4 md:px-20  py-8 flex flex-col items-center text-center bg-white shadow-md rounded-lg md:mt-10 mt-1">
+        <h2 className="text-2xl md:text-3xl font-semibold mb-2">
+          Looking for a Scooter Temporarily?
+        </h2>
+        <p className="text-lg font-medium text-gray-600 mb-6">
+          We offer short-term and long-term rentals at an affordable price.
+        </p>
+        <Link className="bg-blue-950 text-white text-md font-medium mt-5 px-6 py-3 rounded-md hover:bg-blue-900 transition-all" href="https://mednation.ca/mobility-scooter-rentals/">
+          See Our Rentals
+        </Link>
+      </div>
+
+
+      <div className="w-full  mx-auto mt-10 max-w-5xl bg-gray-100 p-6 rounded-md shadow-md border border-gray-300 mb-10">
         <p className="text-lg text-gray-500">
           Mobility scooters are electrically powered vehicles designed to help people with mobility issues move around easily and independently. These vehicles come in a variety of styles. We have mobility scooters available for sale and rental.
         </p>
@@ -277,38 +231,38 @@ const Product1Page: React.FC = () => {
       </div>
 
       <div className="md:px-20 mx-auto p-6 mb-10">
-      <h2 className="text-3xl font-bold text-center mb-6">Frequently Asked Questions</h2>
-      <div className="space-y-4">
-        {faqs.map((faq, index) => (
-          <div
-            key={index}
-            className="border-b pb-2 overflow-hidden"
-          >
-            <button
-              className="w-full flex space-x-10 items-center p-4  text-black hover:text-blue-900 transition duration-300"
-              onClick={() => toggleFAQ(index)}
+        <h2 className="text-3xl font-bold text-center mb-6">Frequently Asked Questions</h2>
+        <div className="space-y-4">
+          {faqs.map((faq, index) => (
+            <div
+              key={index}
+              className="border-b pb-2 overflow-hidden"
             >
-                  <span className="text-xl bg-black w-[30px] h-[30px] flex items-center justify-center hover:text-white hover:bg-blue-900 text-white ">
-                {openIndex === index ? "−" : "+"}
-              </span>
-              <span className="font-medium text-xl">{faq.question}</span>
-          
-            </button>
-            {openIndex === index && (
-              <motion.div
-                initial={{ opacity: 0, y: -10 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -10 }}
-                transition={{ duration: 0.3 }}
-                className="p-4 bg-white text-black"
+              <button
+                className="w-full flex space-x-10 items-center p-4  text-black hover:text-blue-900 transition duration-300"
+                onClick={() => toggleFAQ(index)}
               >
-                {faq.answer}
-              </motion.div>
-            )}
-          </div>
-        ))}
+                <span className="text-xl bg-black w-[30px] h-[30px] flex items-center justify-center hover:text-white hover:bg-blue-900 text-white ">
+                  {openIndex === index ? "−" : "+"}
+                </span>
+                <span className="font-medium text-xl">{faq.question}</span>
+
+              </button>
+              {openIndex === index && (
+                <motion.div
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                  transition={{ duration: 0.3 }}
+                  className="p-4 bg-white text-black"
+                >
+                  {faq.answer}
+                </motion.div>
+              )}
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
     </div>
   );
 };
