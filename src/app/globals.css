@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Golos+Text:wght@400..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Oleo+Script:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -8,9 +7,13 @@ html, body {
   text-decoration-skip-ink: none;
 }
 
-
+.font-light {
+  font-weight: 300;
+}
 body{
-  font-family: "Golos Text", sans-serif;
+  background-color: #F4F4F4;
+  font-family: "Open Sans", sans-serif;
+
 }
 .lato{
     font-family: "Lato", sans-serif;
